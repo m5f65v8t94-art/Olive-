@@ -1,13 +1,26 @@
-
 {
-  "rewrites": [
+  "builds": [
     {
-      "source": "/",
-      "destination": "/ai_wellbeing_app/backend/app/static/index.html"
+      "src": "api/index.py",
+      "use": "@vercel/python"
     },
     {
-      "source": "/static/:path*",
-      "destination": "/ai_wellbeing_app/backend/app/static/:path*"
+      "src": "backend/app/static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/backend/app/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/backend/app/static/$1"
     }
   ]
 }
