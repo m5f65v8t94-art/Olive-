@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/backend/app/static/index.html"
+      "destination": "/ai_wellbeing_app/backend/app/static/index.html"
     },
     {
       "source": "/static/:path*",
-      "destination": "/backend/app/static/:path*"
+      "destination": "/ai_wellbeing_app/backend/app/static/:path*"
     }
   ]
 }
