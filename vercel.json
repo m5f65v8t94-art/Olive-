@@ -1,12 +1,13 @@
 {
-  "rewrites": [
+  "version": 2,
+  "routes": [
     {
-      "source": "/",
-      "destination": "/ai_wellbeing_app/backend/app/static/index.html"
+      "src": "/",
+      "dest": "/backend/app/static/index.html"
     },
     {
-      "source": "/static/:path*",
-      "destination": "/ai_wellbeing_app/backend/app/static/:path*"
+      "src": "/(.*)",
+      "dest": "/backend/app/static/$1"
     }
   ]
 }
